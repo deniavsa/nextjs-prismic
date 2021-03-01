@@ -4,12 +4,25 @@ import Prismic from 'prismic-javascript'
 import { RichText, Date } from 'prismic-reactjs'
 import { client } from '../prismic-configuration'
 
-const BlogHome = ({ home }) => (
+const BlogHome = ({ home, posts }) => (
   <div>
-    <h1>Buscando Informações da API do prismic:</h1>
-    {/* <img src={home.data.image.url} alt="avatar image" /> */}
-    <h1>{home.data.data}</h1>
-    <p>{home.data.cor}</p>
+    <h1>Buscando Informações de pagina única</h1>
+    <h1>{home.data.data}</h1> 
+    <h1>{home.data.cor}</h1>   
+    <img src={home.data.imagem.url} alt="avatar image"width="280" height="280" />
+
+    <h1>Buscando Informações de varios posts</h1>
+    <ul>
+      
+        {posts.results.map((post) => (
+          <li key={post.uid}>
+            {post.data.title}
+            {/* {RichText.asText(post.data.title)} */}
+            {/* {RichText.render(post.data.title)} */}
+            <img src={post.data.imagem.url} alt="avatar image"width="150" height="150" />
+          </li>
+        ))}
+      </ul>
   </div>
 )
 
@@ -23,7 +36,7 @@ export async function getServerSideProps() {
 
   console.log(posts)
 
-  return { props: { home } }
+  return { props: { home, posts } }
 }
 
 export default BlogHome

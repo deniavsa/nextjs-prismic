@@ -13,7 +13,6 @@ const BlogHome = ({ home, posts }) => (
 
     <h1>Buscando Informações de varios posts</h1>
     <ul>
-      
         {posts.results.map((post) => (
           <li key={post.uid}>
             {post.data.title}
@@ -26,16 +25,18 @@ const BlogHome = ({ home, posts }) => (
   </div>
 )
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
+  //Função na qual busca apenas pagina unica e armazena na constante home
   const home = await client.getSingle('blog_home')
-  
+  //Função que busca varios posts e armazena na constante posts
   const posts = await client.query(
     Prismic.Predicates.at("document.type", "blog_article"),
     { orderings: "[my.post.date desc]" }
   )
 
-  console.log(posts)
+  // console.log(posts)
 
+  //Passando home e posts para as props da aplicação 
   return { props: { home, posts } }
 }
 

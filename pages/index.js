@@ -7,6 +7,9 @@ import { RichText, Date } from "prismic-reactjs";
 
 import Layout from "../components/Layout";
 
+// import styles from '../styles/Home.module.css'
+//normaly we import the Home css here when we're using css modules
+
 const BlogHome = ({ home, posts }) => (
   <Layout>
    

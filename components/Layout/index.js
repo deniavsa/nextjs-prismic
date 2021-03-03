@@ -9,6 +9,7 @@ import Button from "@material-ui/core/Button";
 import IconButton from "@material-ui/core/IconButton";
 import MenuIcon from "@material-ui/icons/Menu";
 import Container from '@material-ui/core/Container';
+import Paper from '@material-ui/core/Paper';
 
 const useStyles = makeStyles((theme) =>
   createStyles({
@@ -46,6 +47,8 @@ const Layout = ({ children }) => {
             
           </Toolbar>
         </AppBar>
+
+        <Paper elevation={0} />
       </div>
       {children}
       <AppBar position="static" color="primary">

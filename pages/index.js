@@ -5,9 +5,11 @@ import { RichText, Date } from 'prismic-reactjs'
 
 import Link from "next/link"
 
+import { Button } from '@material-ui/core'
+
 const BlogHome = ({ home, posts }) => (
   <div>
-
+    <Button variant="contained" color="primary">Hello</Button>
     <h1>Buscando Informações de pagina única</h1>
 
     <h1>{home.data.data}</h1> 

@@ -3,14 +3,17 @@ import { client } from "../../prismic-configuration"
 
 import { RichText } from "prismic-reactjs"
 
+import Layout from "../../components/Layout";
+
 export default function Post({ data }) {
   return (
-    <>
+    <Layout>
+
     <h1>Rotas dinamicas</h1>
     <article>
         <img src={data.imagem.url} alt="avatar image"width="150" height="150" />
     </article>
-    </>
+    </Layout>
   )
 }
 

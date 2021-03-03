@@ -6,13 +6,10 @@ import Link from "next/link";
 import { RichText, Date } from "prismic-reactjs";
 
 import Layout from "../components/Layout";
-import { Button } from "@material-ui/core";
 
 const BlogHome = ({ home, posts }) => (
   <Layout>
-    <Button variant="contained" color="primary">
-      Hello
-    </Button>
+   
     <h1>Buscando Informações de pagina única</h1>
 
     <h1>{home.data.data}</h1>

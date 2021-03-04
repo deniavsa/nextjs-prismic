@@ -107,7 +107,7 @@ const Layout = ({ children }) => {
   const post = {
     title: "Welcome to my blog",
     description: "Here you can see very things about tecnology",
-    linkText: "Go ahead",
+    // linkText: "Go ahead",
     image: "url(https://images.unsplash.com/photo-1614183259136-da6339ccd662)",
   };
 
@@ -116,7 +116,7 @@ const Layout = ({ children }) => {
   return (
     <>
       <Toolbar className={classes.toolbar}>
-        <Button size="small">GitHub</Button>
+        {/* <Button size="small"></Button> */}
         <Typography
           component="h2"
           variant="h3"
@@ -128,9 +128,9 @@ const Layout = ({ children }) => {
           Deni.Dev - Blog
         </Typography>
         {/* <IconButton><SearchIcon /></IconButton> */}
-        <Button variant="outlined" size="small">
+        {/* <Button variant="outlined" size="small">
           LinkedIn
-        </Button>
+        </Button> */}
       </Toolbar>
       <Toolbar
         component="nav"
@@ -174,9 +174,9 @@ const Layout = ({ children }) => {
             <Typography variant="h5" color="inherit" paragraph>
               {post.description}
             </Typography>
-            <Link variant="subtitle1" href="#">
+            {/* <Link variant="subtitle1" href="#">
               {post.linkText}
-            </Link>
+            </Link> */}
           </Container>
         </div>
       </Paper>

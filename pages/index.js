@@ -6,6 +6,7 @@ import Link from "next/link";
 import { RichText, Date } from "prismic-reactjs";
 
 import Layout from "../components/Layout";
+// import Card from '../components/Card'
 
 // import styles from '../styles/Home.module.css'
 //normaly we import the Home css here when we're using css modules
@@ -34,29 +35,37 @@ const BlogHome = ({ home, posts }) => (
         <Grid container>
           <Grid item xs={12}>
             <h1>Buscando todos posts do blog:</h1>
-            <Grid container>
-              {posts.results.map((post) => (
-                <Grid item key={post.uid}>
-                  {/* <title>{RichText.render(post.data.title)} | Blog | Deni Dev</title> */}
-                  {/* <RichText render={post.data.title} /> */}
-                  <img
-                    src={post.data.imagem.url}
-                    alt="avatar image"
-                    width="150"
-                    height="150"
-                  />
-                  <p>{post.data.calendar}</p>
-                  {/* <p>{post.data.campo_de_texto}</p> */}
-                  <p>{post.data.numeros}</p>
-                  <p>{post.data.calendario_e_horas}</p>
+            <Container maxWidth="lg">
+              <Grid container>
+                {posts.results.map((post) => (
+                  <Grid item key={post.uid} xs={6} sm={4} md={3} >
+                    {/* <title>{RichText.render(post.data.title)} | Blog | Deni Dev</title> */}
+                    {/* <RichText render={post.data.title} /> */}
 
-                  <Link href="posts/[id]" as={`/posts/${post.uid}`}>
-                    <a>{post.data.color}</a>
-                    {/* {RichText.render(post.data.cor)} */}
-                  </Link>
-                </Grid>
-              ))}
-            </Grid>
+                    {/* <Card>
+
+                    </Card> */}
+
+
+                    <img
+                      src={post.data.imagem.url}
+                      alt="avatar image"
+                      width="150"
+                      height="150"
+                    />
+                    <p>{post.data.calendar}</p>
+                    {/* <p>{post.data.campo_de_texto}</p> */}
+                    <p>{post.data.numeros}</p>
+                    <p>{post.data.calendario_e_horas}</p>
+
+                    <Link href="posts/[id]" as={`/posts/${post.uid}`}>
+                      <a>{post.data.color}</a>
+                      {/* {RichText.render(post.data.cor)} */}
+                    </Link>
+                  </Grid>
+                ))}
+              </Grid>
+            </Container>
           </Grid>
         </Grid>
       </Container>

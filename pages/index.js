@@ -19,49 +19,49 @@ import Paper from "@material-ui/core/Paper";
 import Grid, { GridSpacing } from "@material-ui/core/Grid";
 
 const BlogHome = ({ home, posts }) => (
-  <Layout>
+  <>
     {/* <h1>Buscando Informações de pagina única</h1>
-
     <h1>{home.data.data}</h1>
     <h1>{home.data.cor}</h1>
-
     <img
       src={home.data.imagem.url}
       alt="avatar image"
       width="280"
       height="280"
     /> */}
-    <Container maxWidth="lg">
-      <Grid container>
-        <Grid item xs={12}>
-          <h1>Buscando todos posts do blog:</h1>
-          <Grid container>
-            {posts.results.map((post) => (
-              <Grid item key={post.uid}>
-                {/* <title>{RichText.render(post.data.title)} | Blog | Deni Dev</title> */}
-                {/* <RichText render={post.data.title} /> */}
-                <img
-                  src={post.data.imagem.url}
-                  alt="avatar image"
-                  width="150"
-                  height="150"
-                />
-                <p>{post.data.calendar}</p>
-                {/* <p>{post.data.campo_de_texto}</p> */}
-                <p>{post.data.numeros}</p>
-                <p>{post.data.calendario_e_horas}</p>
+    <Layout>
+      <Container maxWidth="xl">
+        <Grid container>
+          <Grid item xs={12}>
+            <h1>Buscando todos posts do blog:</h1>
+            <Grid container>
+              {posts.results.map((post) => (
+                <Grid item key={post.uid}>
+                  {/* <title>{RichText.render(post.data.title)} | Blog | Deni Dev</title> */}
+                  {/* <RichText render={post.data.title} /> */}
+                  <img
+                    src={post.data.imagem.url}
+                    alt="avatar image"
+                    width="150"
+                    height="150"
+                  />
+                  <p>{post.data.calendar}</p>
+                  {/* <p>{post.data.campo_de_texto}</p> */}
+                  <p>{post.data.numeros}</p>
+                  <p>{post.data.calendario_e_horas}</p>
 
-                <Link href="posts/[id]" as={`/posts/${post.uid}`}>
-                  <a>{post.data.color}</a>
-                  {/* {RichText.render(post.data.cor)} */}
-                </Link>
-              </Grid>
-            ))}
+                  <Link href="posts/[id]" as={`/posts/${post.uid}`}>
+                    <a>{post.data.color}</a>
+                    {/* {RichText.render(post.data.cor)} */}
+                  </Link>
+                </Grid>
+              ))}
+            </Grid>
           </Grid>
         </Grid>
-      </Grid>
-    </Container>
-  </Layout>
+      </Container>
+    </Layout>
+  </>
 );
 
 export async function getStaticProps() {

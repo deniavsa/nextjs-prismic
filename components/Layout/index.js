@@ -181,15 +181,15 @@ const Layout = ({ children }) => {
         </div>
       </Paper>
       {children}
-      {/* <AppBar position="static" color="primary">
-        <Container maxWidth="xlg">
+      <AppBar position="static" color="primary">
+        <Container maxWidth="xs">
           <Toolbar>
             <Typography variant="body1" color="inherit">
               © 2021 - Denilson Santos
             </Typography>
           </Toolbar>
         </Container>
-      </AppBar> */}
+      </AppBar>
     </>
   );
 };

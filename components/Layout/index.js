@@ -19,7 +19,13 @@ import { Toolbar } from "@material-ui/core";
 const useStyles = makeStyles((theme) => ({
   toolbar: {
     borderBottom: `1px solid ${theme.palette.divider}`,
-    minHeight: 200,
+    minHeight: 300,
+    backgroundImage:
+      "url(https://images.unsplash.com/photo-1614183259136-da6339ccd662)",
+    backgroundSize: "cover fixed",
+    backgroundRepeat: "no-repeat",
+    backgroundPosition: "center",
+    color:'#FFFFFF'
   },
   toolbarTitle: {
     flex: 1,
@@ -37,11 +43,12 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: theme.palette.grey[800],
     color: theme.palette.common.white,
     marginBottom: theme.spacing(4),
-    backgroundImage:
-      "url(https://images.unsplash.com/photo-1614183259136-da6339ccd662)",
-    backgroundSize: "cover fixed",
-    backgroundRepeat: "no-repeat",
-    backgroundPosition: "center",
+    // backgroundImage:
+    //   "url(https://images.unsplash.com/photo-1614183259136-da6339ccd662)",
+    // backgroundSize: "cover fixed",
+    // backgroundRepeat: "no-repeat",
+    // backgroundPosition: "center",
+    flex: "0",
   },
   overlay: {
     position: "absolute",
@@ -99,8 +106,8 @@ const Layout = ({ children }) => {
 
   const post = {
     title: "Welcome to my blog",
-    description: "here you can see very things about tecnology",
-    linkText: "asdasdas",
+    description: "Here you can see very things about tecnology",
+    linkText: "Go ahead",
     image: "url(https://images.unsplash.com/photo-1614183259136-da6339ccd662)",
   };
 
@@ -112,8 +119,8 @@ const Layout = ({ children }) => {
         <Button size="small">GitHub</Button>
         <Typography
           component="h2"
-          variant="h5"
-          color="inherit"
+          variant="h3"
+          
           align="center"
           noWrap
           className={classes.toolbarTitle}
@@ -153,26 +160,25 @@ const Layout = ({ children }) => {
           />
         }
         <div className={classes.overlay} />
-        <Grid container>
-          <Grid item md={6}>
-            <div className={classes.mainFeaturedPostContent}>
-              <Typography
-                component="h1"
-                variant="h3"
-                color="inherit"
-                gutterBottom
-              >
-                {post.title}
-              </Typography>
-              <Typography variant="h5" color="inherit" paragraph>
-                {post.description}
-              </Typography>
-              <Link variant="subtitle1" href="#">
-                {post.linkText}
-              </Link>
-            </div>
-          </Grid>
-        </Grid>
+
+        <div className={classes.mainFeaturedPostContent}>
+          <Container maxWidth="sm">
+            <Typography
+              component="h1"
+              variant="h3"
+              color="inherit"
+              gutterBottom
+            >
+              {post.title}
+            </Typography>
+            <Typography variant="h5" color="inherit" paragraph>
+              {post.description}
+            </Typography>
+            <Link variant="subtitle1" href="#">
+              {post.linkText}
+            </Link>
+          </Container>
+        </div>
       </Paper>
       {children}
       {/* <AppBar position="static" color="primary">

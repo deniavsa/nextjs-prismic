@@ -6,9 +6,9 @@ import { RichText } from "prismic-reactjs";
 import Layout from "../../components/Layout";
 import Link from "next/link";
 
-import Grid, { GridSpacing } from "@material-ui/core/Grid";
+import Grid from "@material-ui/core/Grid";
 import Container from "@material-ui/core/Container";
-import { createStyles, makeStyles, Theme } from "@material-ui/core/styles";
+import { makeStyle } from "@material-ui/core/styles";
 
 import { useRouter } from "next/router";
 

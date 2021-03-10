@@ -1,12 +1,11 @@
 {
   "name": "prismic-next-blog",
   "version": "1.0.0",
-  "description": "Guide code for building a simple blog that uses Prismic+Next+Now",
+  "description": "Guide code for building a simple blog that uses Prismic+Next+MaterialUI",
   "main": "index.js",
   "scripts": {
     "dev": "next",
-    "build": "next build",
-    "deploy": "now"
+    "build": "next build"
   },
   "keywords": [],
   "author": "",
@@ -19,8 +18,5 @@
     "prismic-reactjs": "^1.3.3",
     "react": "^16.8.6",
     "react-dom": "^16.8.6"
-  },
-  "devDependencies": {
-    "now": "^15.5.0"
   }
 }

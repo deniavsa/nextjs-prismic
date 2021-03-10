@@ -8,11 +8,15 @@ import Link from "next/link";
 
 import Grid from "@material-ui/core/Grid";
 import Container from "@material-ui/core/Container";
-import { makeStyle } from "@material-ui/core/styles";
+import { makeStyles } from "@material-ui/core/styles";
 
 import { useRouter } from "next/router";
 
-const useStyles = makeStyles((theme) => ({}));
+const useStyles = makeStyles((theme) => ({
+  root:{
+
+  }
+}));
 
 export default function Post({ data }) {
   const classes = useStyles();
